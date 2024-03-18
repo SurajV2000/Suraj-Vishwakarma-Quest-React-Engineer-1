@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/dash.css";
+import { FaRegCommentDots } from "react-icons/fa";
+
 function Dash() {
   const columnname = ["TODO", "INPROGRESS", "REVIEW", "DONE"];
   const [newTask, setNewTask] = useState("");
@@ -12,6 +14,15 @@ function Dash() {
   useEffect(() => {
     handleAddTask("todo");
   }, [newTask]);
+
+  let getRandomColor = () => {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
 
   const handleDragStart = (e, task) => {
     setDraggedTask(task);
@@ -69,7 +80,12 @@ function Dash() {
                       onDragStart={(e) => handleDragStart(e, task)}
                       className="task"
                     >
+                      <div
+                        style={{ backgroundColor: `${getRandomColor()}` }}
+                        className="elem"
+                      ></div>
                       {task.title}
+                      <FaRegCommentDots />
                     </div>
                   ))}
               </div>

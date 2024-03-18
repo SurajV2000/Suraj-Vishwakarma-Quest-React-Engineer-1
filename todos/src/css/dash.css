@@ -5,7 +5,6 @@
     justify-content: center;
     height: 100%;
     text-align: left;
-    margin-top: 20px;
 }
 .column {
     display: flex;
@@ -37,6 +36,9 @@
     border-radius: 10px;
     background: #F0F0F0;
     color: "black";
+    display: flex;
+        flex-direction: column;
+        gap: 14px;
 }
 
 .addbtn {
@@ -45,4 +47,9 @@
     width: 40%;
     margin: 10px;
     margin-top: -5px;
+}
+.elem {
+    height: 7px;
+    width: 40px;
+    border-radius: 10px;
 }
