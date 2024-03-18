@@ -45,8 +45,8 @@ function Dash() {
 
   const handleAddTask = (category) => {
     if (newTask.trim() !== "") {
-      const newId = tasks.length + 1;
-      const newTaskObj = { id: newId, title: newTask, category };
+      const ID = tasks.length + 1;
+      const newTaskObj = { id: ID, title: newTask, category };
       setTasks([...tasks, newTaskObj]);
       setNewTask("");
     }
